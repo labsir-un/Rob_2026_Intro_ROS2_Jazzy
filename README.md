@@ -5,11 +5,11 @@
     <img src="https://imgur.com/Os03JoE.png" alt="Escudo UNAL" width="350px">
 </picture>
 
-<h3>Curso de Robótica 2025-II</h3>
+<h3>Curso de Robótica 2026-I</h3>
 
 <h1>Introducción a ROS 2 Jazzy</h1>
 
-<h2>Guía 01 - Instalación de ROS 2 Jazzy en Ubuntu 24.04</h2>
+<h2>Instalación de ROS 2 Jazzy en Ubuntu 24.04</h2>
 
 <h4>Pedro Fabián Cárdenas Herrera<br>
     Manuel Felipe Carranza Montenegro</h4>
