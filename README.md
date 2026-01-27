@@ -14,6 +14,12 @@
 <h4>Pedro Fabián Cárdenas Herrera<br>
     Manuel Felipe Carranza Montenegro</h4>
 
+<p>
+  <img alt="Ubuntu 24.04 LTS" src="https://img.shields.io/badge/Ubuntu-24.04%20LTS-E95420?logo=ubuntu&logoColor=white">
+  <img alt="ROS 2 Jazzy" src="https://img.shields.io/badge/ROS%202-Jazzy-22314E?logo=ros&logoColor=white">
+  <img alt="Nivel" src="https://img.shields.io/badge/Nivel-Introductorio-2ea44f">
+</p>
+
 </div>
 
 <div align="justify"> 
