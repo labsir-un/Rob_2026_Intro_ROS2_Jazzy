@@ -24,6 +24,30 @@
 
 <div align="justify"> 
 
+## Tabla de contenidos
+- [Introducción](#introducción)
+- [Objetivos](#objetivos)
+- [Requisitos previos](#requisitos-previos)
+- [Instalación de herramientas previas](#instalación-de-herramientas-previas)
+  - [1. Visual Studio Code](#1-visual-studio-code)
+  - [2. Terminator](#2-terminator-terminal-recomendado)
+- [Instalación de ROS 2 Jazzy](#instalación-de-ros-2-jazzy)
+  - [0. Recomendación antes de empezar](#0-recomendación-antes-de-empezar-si-tenías-otra-versión-de-ros)
+  - [1. Configuración del Locale (UTF-8)](#1-configuración-del-locale-utf-8)
+  - [2. Configurar fuentes oficiales de ROS 2 Jazzy](#2-configurar-fuentes-oficiales-de-ros-2-jazzy)
+  - [3. Instalación de ROS 2 Jazzy](#3-instalación-de-ros-2-jazzy)
+- [Configuración del entorno](#configuración-del-entorno)
+- [Herramientas de desarrollo recomendadas](#herramientas-de-desarrollo-recomendadas-para-el-curso)
+  - [1. rosdep](#1-rosdep-resolver-dependencias)
+  - [2. colcon](#2-colcon-compilación-de-workspaces)
+- [Probar ROS 2 (talker-listener)](#probar-ros-2-ejemplo-talker-listener)
+- [Workspace inicial (opcional)](#opcional-primera-estructura-de-workspace-colcon)
+- [Solución de problemas comunes](#solución-de-problemas-comunes)
+- [Recursos útiles](#recursos-útiles-para-seguir-aprendiendo)
+- [Referencias](#referencias)
+
+---
+
 ## Introducción
 
 ROS 2 (Robot Operating System) es una infraestructura de software modular y abierta diseñada para el desarrollo de aplicaciones robóticas. Esta guía está dirigida a estudiantes y docentes de la Universidad Nacional de Colombia, especialmente aquellos vinculados a cursos de robótica, que deseen configurar un entorno de desarrollo con **ROS 2 Jazzy Jalisco (LTS)** sobre **Ubuntu 24.04 LTS (Noble Numbat)**.
@@ -37,6 +61,19 @@ Aquí se detallan paso a paso los comandos necesarios para instalar ROS 2, confi
 - Introducir herramientas útiles como Terminator y Visual Studio Code para facilitar el desarrollo y la organización del trabajo.
 - Verificar la instalación de ROS 2 mediante la ejecución de nodos de ejemplo (talker y listener).
 - Dejar listo el entorno base para compilar paquetes con `colcon` y resolver dependencias con `rosdep`.
+
+---
+
+## Requisitos previos
+
+- Tener instalado **Ubuntu 24.04 LTS (Noble Numbat)** (idealmente instalación nativa o dual boot).
+- Conexión a internet estable.
+- Usuario con permisos `sudo`.
+- Recomendado: sistema actualizado antes de iniciar.
+
+```bash
+sudo apt update && sudo apt upgrade -y
+```
 
 ---
 
@@ -172,11 +209,13 @@ echo "source /opt/ros/jazzy/setup.bash" >> ~/.bashrc
 source ~/.bashrc
 ```
 
+> Nota: Si usas `zsh`, reemplaza `~/.bashrc` por `~/.zshrc`.
+
 ---
 
 ## Herramientas de desarrollo recomendadas (para el curso)
 
-### 1) rosdep (resolver dependencias)
+### 1. rosdep (resolver dependencias)
 
 ```bash
 sudo apt install python3-rosdep -y
@@ -184,13 +223,13 @@ sudo rosdep init
 rosdep update
 ```
 
-### 2) colcon (compilación de workspaces)
+### 2. colcon (compilación de workspaces)
 
 ```bash
 sudo apt install python3-colcon-common-extensions python3-argcomplete -y
 ```
 
-> Verificación rápida:
+Verificación rápida:
 ```bash
 colcon --help
 ```
@@ -230,6 +269,7 @@ source install/setup.bash
 ```
 
 Para instalar dependencias cuando tengas paquetes en `src/`:
+
 ```bash
 cd ~/colcon_ws
 rosdep install --from-paths src --ignore-src -r -y
@@ -237,10 +277,35 @@ rosdep install --from-paths src --ignore-src -r -y
 
 ---
 
+## Solución de problemas comunes
+
+### 1) `ros2: command not found`
+- Asegúrate de haber ejecutado:
+  ```bash
+  source /opt/ros/jazzy/setup.bash
+  ```
+- Verifica que exista la carpeta:
+  ```bash
+  ls /opt/ros/
+  ```
+
+### 2) Errores al agregar repositorio o llave GPG
+- Repite el paso de la llave GPG y el repo, y luego:
+  ```bash
+  sudo apt update
+  ```
+
+### 3) `rosdep init` falla por permisos o archivo existente
+- Si ya estaba inicializado, solo ejecuta:
+  ```bash
+  rosdep update
+  ```
+
+---
+
 ## Recursos útiles (para seguir aprendiendo)
 
 - Documentación oficial de ROS 2 Jazzy (instalación y tutoriales).
-- Guía oficial de instalación de ROS 2 Jazzy en Ubuntu (paquetes deb).
 - Índice de instalación de ROS 2 Jazzy (opciones y plataformas).
 - Guías de ROS 2 para Docker (si trabajas con contenedores).
 - Documentación oficial de VS Code en Linux.
