@@ -9,7 +9,7 @@
 
 <h1>Introducción a ROS 2 Jazzy</h1>
 
-<h2>Guía 01 - Instalación de ROS 2 Jazzy en Ubuntu 24.04</h2>
+<h2>Guía 02 - Instalación de ROS 2 Jazzy en Ubuntu 24.04</h2>
 
 <h4>Pedro Fabián Cárdenas Herrera<br>
     Manuel Felipe Carranza Montenegro</h4>
